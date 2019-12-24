@@ -1,0 +1,7 @@
+{
+  "params":
+  {
+    "uri":"mysql://root:@localhost/restaurants",
+    "name": "Food Fanda"
+  }
+}

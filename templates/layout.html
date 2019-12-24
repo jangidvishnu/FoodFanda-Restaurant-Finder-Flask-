@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{params["name"]}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='fonts/icomoon/style.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/jquery-ui.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.theme.default.min.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-datepicker.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='fonts/flaticon/font/flaticon.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/aos.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/rangeslider.css')}}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+  </head>
+  <body>
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar container py-0 " role="banner">
+
+      <!-- <div class="container"> -->
+        <div class="row align-items-center">
+
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo"><a href="http://127.0.0.1:5000/" class="text-white mb-0">Food Fanda</a></h1>
+          </div>
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="active"><a href="http://127.0.0.1:5000/">Home</a></li>
+                <li class="has-children">
+                  <a href="#">Booking</a>
+                  <ul class="dropdown">
+                    <li><a href="bookingTable">Table Booking</a></li>
+                    <li><a href="bookingHall">Hall Booking</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#">About</a>
+                  <ul class="dropdown">
+                    <li><a href="#">The Company</a></li>
+                    <li><a href="#">The Leadership</a></li>
+                    <li><a href="#">Philosophy</a></li>
+                    <li><a href="#">Careers</a></li>
+                  </ul>
+                </li>
+                <li class="active"><a href="contact">Contact</a></li>
+                <span class="border-left pl-xl-4"></span>
+                <li class="has-children">
+                  <a href="#">Login</a>
+                  <ul class="dropdown">
+                <li class="ml-xl-3 login"><a href="adminLogin">Admin</a></li>
+                <li class="ml-xl-3 login"><a href="login">User</a></li>
+                  </ul>
+                </li>
+                <li><a href="register" class="cta"><span class="bg-primary text-white rounded">Register</span></a></li>
+
+            <!-- Nav Item - User Information -->
+                {% if user %}
+            <li class="nav-item dropdown no-arrow" style="padding-left:5em">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-400 small">{{user}}</span>
+                <img class="img-profile rounded-circle" src="static/images/user.png">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  My Orders
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="logout">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+                {% endif %}
+
+                <div class="topbar-divider d-none d-sm-block"></div>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="d-inline-block d-xl-none ml-auto py-3 col-6 text-right" style="position: relative; top: 3px;">
+            <a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a>
+          </div>
+
+        </div>
+      <!-- </div> -->
+
+    </header>
+
+      {% block body %} {% endblock %}
+    <div class="newsletter bg-primary py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2>Newsletter</h2>
+            <p>Subscribe to get Latest Offers and Blogs.</p>
+          </div>
+          <div class="col-md-6">
+
+            <form class="d-flex">
+              <input type="email" class="form-control" placeholder="Email">
+              <input type="submit" value="Subscribe" class="btn btn-white">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+       <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-6">
+                <h2 class="footer-heading mb-4">About</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident rerum unde possimus molestias dolorem fuga, illo quis fugiat!</p>
+              </div>
+
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Navigations</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                  <li><a href="#">Contact Us</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Follow Us</h2>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+            <p>
+
+            Copyright &copy; Food Fanda All rights reserved <i class="icon-heart" aria-hidden="true"></i></a>
+
+            </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="{{url_for('static',filename='js/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/jquery-migrate-3.0.1.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/jquery-ui.js')}}"></script>
+  <script src="{{url_for('static',filename='js/popper.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/owl.carousel.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/jquery.stellar.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/jquery.countdown.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/jquery.magnific-popup.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/bootstrap-datepicker.min.js')}}"></script>
+  <script src="{{url_for('static',filename='js/aos.js')}}"></script>
+  <script src="{{url_for('static',filename='js/rangeslider.min.js')}}"></script>
+
+  <script src="{{url_for('static',filename='js/main.js')}}"></script>
+
+  </body>
+</html>
