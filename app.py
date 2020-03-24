@@ -11,7 +11,6 @@ app=Flask(__name__)
 app.secret_key="abc"
 
 mydb=mysql.connector.connect(host="localhost",user="root",database="restaurants")
-
 app.config['SQLALCHEMY_DATABASE_URI'] =params["uri"]
 db = SQLAlchemy(app)
 
@@ -118,12 +117,13 @@ def login():
         sql = "select * from user where email='" + email + "'"
         mycursor.execute(sql)
         data = mycursor.fetchone()
+        print(data)
         mycursor.close()
         if (data is not None):
-            if (data[2] == password and data[3] == 1):
+            if (data[1] == password and data[3] == 1):
                 session['user'] = email
                 return render_template("home.html",user=session['user'],params=params)
-            elif (data[2] == password):
+            elif (data[1] == password):
                 msg = Message(
                     'Verify',
                     sender='zarvis1287@gmail.com',
